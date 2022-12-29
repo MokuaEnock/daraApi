@@ -53,3 +53,4 @@ gem "net-http"
 gem "byebug"
 gem "faker"
 gem "jwt"
+gem 'active_model_serializers'
