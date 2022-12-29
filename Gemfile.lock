@@ -147,6 +147,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.5)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-protection (3.0.5)
       rack
     rack-test (2.0.2)
@@ -213,6 +215,7 @@ DEPENDENCIES
   net-http
   omniauth-github!
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.4)
   ruby-lsp (~> 0.3.7)
   sqlite3 (~> 1.4)
