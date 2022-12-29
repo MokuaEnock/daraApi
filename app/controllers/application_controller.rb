@@ -1,3 +1,7 @@
 class ApplicationController < ActionController::API
-  include ActionController::Cookies
+  def encode_token(payload)
+  end
+
+  def decode_token(token)
+  end
 end
