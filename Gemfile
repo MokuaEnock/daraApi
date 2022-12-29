@@ -51,3 +51,4 @@ gem "ruby-lsp", "~> 0.3.7", :group => :development
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "net-http"
 gem "byebug"
+gem "faker"
