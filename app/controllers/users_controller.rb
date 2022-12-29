@@ -1,3 +1,10 @@
 class UsersController < ApplicationController
-  has_secure_password
+  def create
+  end
+
+  private
+
+  def user_params
+    params.permit(:email, :password, :password_confirmation)
+  end
 end
