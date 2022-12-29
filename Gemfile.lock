@@ -217,6 +217,7 @@ DEPENDENCIES
   byebug
   debug
   faker
+  jwt
   net-http
   omniauth-github!
   puma (~> 5.0)

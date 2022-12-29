@@ -52,3 +52,4 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "net-http"
 gem "byebug"
 gem "faker"
+gem "jwt"
