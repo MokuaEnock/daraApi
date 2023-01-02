@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
   resources :users, only: %i[show create]
   post "/login", to: "auth#create"
   get "/profile", to: "users#profile"
