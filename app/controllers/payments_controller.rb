@@ -26,6 +26,14 @@ class PaymentsController < ApplicationController
     https.use_ssl = true
 
     request = Net::HTTP::Get.new(url)
-    enc =Base64
+    enc =
+      Base64.strict_encode64(
+        "GQURzRWARSNHgtjnzs2JbbnYn4XdA2Cz:pavEGKI5l8G7KUrY"
+      )
+    request["Authorization"] = "Basic #{enc}"
+    response = https.request(request)
+
+    data = JSON.parse(response.body)
+    data["access_token"]
   end
 end
