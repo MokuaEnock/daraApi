@@ -15,4 +15,17 @@ class PaymentsController < ApplicationController
   def pay_params
     params.permit(:phone, :total)
   end
+
+  def get_access_token
+    url =
+      URI(
+        "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
+      )
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    enc =Base64
+  end
 end

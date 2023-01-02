@@ -54,3 +54,4 @@ gem "byebug"
 gem "faker"
 gem "jwt"
 gem 'active_model_serializers'
+gem "rest-client"
