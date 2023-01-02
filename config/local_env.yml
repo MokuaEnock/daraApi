@@ -1,0 +1,8 @@
+MPESA_CONSUMER_KEY: '<your consumer key>'
+MPESA_CONSUMER_SECRET: '<your consumer secret>'
+MPESA_PASSKEY: '<your passkey>'
+MPESA_SHORT_CODE: '174379'
+MPESA_INITIATOR_NAME: 'testapi'
+MPESA_INITIATOR_PASSWORD: '<your initiator password>'
+CALLBACK_URL: '< your ngrok url>'
+REGISTER_URL: "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
