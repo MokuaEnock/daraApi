@@ -7,4 +7,10 @@ class PaymentsController < ApplicationController
     pay = Payment.create(pay_params)
     render json: pay
   end
+
+  private
+
+  def pay_params
+    permit.params(:phone, :total)
+  end
 end
