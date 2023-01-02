@@ -1,3 +1,7 @@
+require "uri"
+require "net/http"
+require "base64"
+
 class PaymentsController < ApplicationController
   skip_before_action :authorized, only: %i[create index]
 
@@ -32,10 +36,10 @@ class PaymentsController < ApplicationController
       Timestamp: "#{Time.now.strftime "%Y%m%d%H%M%S"}",
       TransactionType: "CustomerPayBillOnline",
       Amount: 100,
-      PartyA: params[:phone_number],
+      PartyA: params[:phone],
       PartyB: 174_379,
-      PhoneNumber: params[:phone_number],
-      CallBackURL: "https://hired-app-api.herokuapp.com/mpesa_callback",
+      PhoneNumber: params[:phone],
+      CallBackURL: "https://1bd8-102-215-78-19.in.ngrok.io/mpesa_callback",
       AccountReference: "Hired LTD",
       TransactionDesc: "Payment of subscription"
     }.to_json
@@ -73,5 +77,25 @@ class PaymentsController < ApplicationController
 
     data = JSON.parse(response.body)
     data["access_token"]
+  end
+
+  def sample_token
+    ​
+    url =
+      URI(
+        "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
+      )
+    ​
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+    ​
+    request = Net::HTTP::Post.new(url)
+    request[
+      "Authorization"
+    ] = "Bearer cFJZcjZ6anEwaThMMXp6d1FETUxwWkIzeVBDa2hNc2M6UmYyMkJmWm9nMHFRR2xWOQ=="
+    ​
+    response = https.request(request)
+    data = JSON.parse(response.body)
+    return data["access_token"]
   end
 end
