@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+  skip_before_action :authorized, only: %i[create index]
+
   def index
     render json: Payment.all
   end
@@ -11,6 +13,6 @@ class PaymentsController < ApplicationController
   private
 
   def pay_params
-    permit.params(:phone, :total)
+    params.permit(:phone, :total)
   end
 end
