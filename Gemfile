@@ -48,7 +48,6 @@ end
 
 
 gem "ruby-lsp", "~> 0.3.7", :group => :development
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "net-http"
 gem "byebug"
 gem "faker"
@@ -57,5 +56,6 @@ gem 'active_model_serializers'
 gem "rest-client"
 gem "devise"
 gem "omniauth-twitter"
+gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "omniauth-rails_csrf_protection"
