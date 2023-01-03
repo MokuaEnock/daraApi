@@ -56,3 +56,5 @@ gem "jwt"
 gem 'active_model_serializers'
 gem "rest-client"
 gem "devise"
+gem "omniauth-twitter"
+gem "omniauth-facebook"
