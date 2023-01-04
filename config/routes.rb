@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :payments
-  resources :users, only: %i[show create]
+  # resources :users
+  # resources :payments
+  # resources :users, only: %i[show create]
   post "/login", to: "auth#create"
   get "/profile", to: "users#profile"
+
+  devise_for :users,
+             controllers: {
+               registrations: "users/registartion",
+               sessions: "users/sessions",
+               omniauth_callbacks: "users/omniauth_callbacks"
+             }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
