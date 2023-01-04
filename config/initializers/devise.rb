@@ -42,6 +42,10 @@ Devise.setup do |config|
                   ENV["GOOGLE_OAUTH_CLIENT_ID"],
                   ENV["GOOGLE_OAUTH_CLIENT_SECRET"]
 
+  config.omniauth :google_oauth2,
+                  Rails.application.credentials.dig(:google_oauth_client_id),
+                  Rails.application.credentials.dig(:google_oauth_client_secret)
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
