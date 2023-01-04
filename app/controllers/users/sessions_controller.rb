@@ -13,6 +13,10 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def after_sign_out_path_for(_resource_or_scope)
+    new_user_session_path
+  end
+
   # DELETE /resource/sign_out
   # def destroy
   #   super
