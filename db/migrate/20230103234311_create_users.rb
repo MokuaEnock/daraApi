@@ -12,9 +12,9 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.datetime :reset_password_sent_at
       t.datetime :remember_created_at
       t.timestamps null: false
-
-      add_index :users, :email, unique: true
-      add_index :users, :reset_password_token, unique: true
     end
+
+    add_index :users, :email, unique: true
+    add_index :users, :reset_password_token, unique: true
   end
 end
